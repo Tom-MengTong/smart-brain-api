@@ -37,6 +37,6 @@ app.post("/register", (req, res) => { register.handleRegister(req, res, db, bcry
 app.put('/image', (req, res) => { image.handleImage(req, res, db) });
 app.post('/imagePredict', (req, res) => { imagePredict.handleImagePredict(req, res, Clarifai) });
 
-app.listen(3000, () => {
-	console.log ('App is running on port 3000')
+app.listen(process.env.PORT || 3000, () => {
+	console.log (`App is running on port ${process.env.PORT}`)
 });
